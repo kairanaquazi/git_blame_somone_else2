@@ -14,7 +14,7 @@ def main(author, commit):
 
     cenv = os.environ.copy()
     cenv |= {
-        "GIT_SEQUENCE_EDITOR": "sed -i '0,/pick/{s/pick/edit/}'",
+        "GIT_SEQUENCE_EDITOR": f"sed -i '0,/pick {scommit}/" "{" f"s/pick {scommit}/edit/" "}'",
         "GIT_COMMITER_NAME": aname,
         "GIT_COMMITER_EMAIL": aemail,
 
